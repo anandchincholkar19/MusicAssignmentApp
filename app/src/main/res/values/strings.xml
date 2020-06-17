@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MusicAssignmentApp</string>
+    <string name="search_hint">MusicAssignmentApp</string>
+    <string name="album">Album</string>
+    <string name="artist">Artist</string>
+    <string name="search">Search</string>
+    <string name="album_name">Album Name :</string>
+    <string name="artist_name">Artist Name :</string>
 </resources>

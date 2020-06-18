@@ -11,6 +11,7 @@ class MusicAppConstatnt {
         public const val FORMAT_VALUE = "json"
         public const val API_KEY_VALUE = "66e92e75da6e830222b8cd106e954966"
         public const val EMPTY_STRING = ""
-        public const val SUFFIX_SEARCH = ".search"
+        public const val ALBUM_VALUE = "album.search"
+        public const val ARTIST_METHOD_VALUE = "    artist.getinfo"
     }
 }

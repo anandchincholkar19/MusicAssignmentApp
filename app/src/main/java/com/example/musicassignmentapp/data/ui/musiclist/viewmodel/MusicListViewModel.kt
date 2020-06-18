@@ -1,6 +1,5 @@
 package com.example.musicassignmentapp.data.ui.musiclist.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,20 +11,18 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
 class MusicListViewModel(
-    private val newsListRepository: MusicAppRepository,
-    private val queryParams: HashMap<String, String>
+    private val newsListRepository: MusicAppRepository
 ) : ViewModel() {
 
     private val list = MutableLiveData<Resource<Album>>()
 
-    public fun fetchList() {
+    public fun fetchList(queryParams: HashMap<String, String>) {
         CoroutineExceptionHandler { _, exceptio ->
         }
         viewModelScope.launch {
             list.postValue(Resource.LOADING(null))
             try {
                 val response = newsListRepository.getAlbums(queryParams)
-                Log.e("NewsListViewModel : ", response.toString())
                 list.postValue(Resource.Succcess(response))
             } catch (e: Exception) {
                 list.postValue(Resource.Error(e.message, null))

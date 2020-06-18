@@ -3,15 +3,22 @@ package com.example.musicassignmentapp.data.ui.musiclist.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicassignmentapp.R
 import com.example.musicassignmentapp.data.model.AlbumX
+import com.example.musicassignmentapp.utils.OnItemClickListener
 import kotlinx.android.synthetic.main.item_layout.view.*
 
-class MusicListAdapter(private val albumList: ArrayList<AlbumX>):
+class MusicListAdapter(private val albumList: ArrayList<AlbumX> ,
+                       private val listener: OnItemClickListener):
     RecyclerView.Adapter<MusicListAdapter.DataViewHolder>() {
+
     override fun onBindViewHolder(holder:DataViewHolder, position :Int){
         holder.bind(albumList.get(position))
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(albumList.get(position).name)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -31,7 +38,8 @@ class MusicListAdapter(private val albumList: ArrayList<AlbumX>):
         }
     }
 
-    fun addData(list:List<AlbumX>){
+    fun addData(list:ArrayList<AlbumX>){
+        albumList.clear()
         albumList.addAll(list)
     }
 

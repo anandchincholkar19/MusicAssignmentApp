@@ -44,7 +44,6 @@ class ArtistInfoActivity : AppCompatActivity() {
                 Status.SUCCESS -> {
                     progressBar.visibility = View.GONE
                     it.data?.let { artistinfo ->
-                        Log.e("ArtistInfo :", artistinfo.toString())
                         setupUI(artistinfo)
                     }
                 }

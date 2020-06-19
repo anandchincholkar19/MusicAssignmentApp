@@ -3,7 +3,6 @@ package com.example.musicassignmentapp.data.ui.musiclist.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicassignmentapp.R
 import com.example.musicassignmentapp.data.model.AlbumX

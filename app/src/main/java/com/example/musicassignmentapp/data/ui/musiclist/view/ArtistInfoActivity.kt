@@ -2,7 +2,6 @@ package com.example.musicassignmentapp.data.ui.musiclist.view
 
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

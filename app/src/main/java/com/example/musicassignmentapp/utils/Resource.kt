@@ -1,7 +1,5 @@
 package com.example.musicassignmentapp.utils
 
-import com.example.musicassignmentapp.data.model.AlbumX
-
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 
     companion object {

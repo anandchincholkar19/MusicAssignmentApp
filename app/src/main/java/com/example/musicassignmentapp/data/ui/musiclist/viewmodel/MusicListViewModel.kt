@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
 class MusicListViewModel(
-    private val newsListRepository: MusicAppRepository
+    private val musiclistRepository: MusicAppRepository
 ) : ViewModel() {
 
     private val list = MutableLiveData<Resource<Album>>()
@@ -22,7 +22,7 @@ class MusicListViewModel(
         viewModelScope.launch {
             list.postValue(Resource.LOADING(null))
             try {
-                val response = newsListRepository.getAlbums(queryParams)
+                val response = musiclistRepository.getAlbums(queryParams)
                 list.postValue(Resource.Succcess(response))
             } catch (e: Exception) {
                 list.postValue(Resource.Error(e.message, null))
